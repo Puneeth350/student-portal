@@ -1,0 +1,78 @@
+
+import React from "react";
+import "./App.css";
+
+// Student Component using Props
+function Student(props) {
+  return (
+    <div className="student-card">
+
+      <div className="profile">
+        <div className="avatar">
+          {props.studentName.charAt(0)}
+        </div>
+
+        <h2>{props.studentName}</h2>
+        <span className="status">Active Student</span>
+      </div>
+
+      <div className="details">
+        <div className="detail-box">
+          <span>🎓 Student Course</span>
+          <h3>{props.studentCourse}</h3>
+        </div>
+
+        <div className="detail-box">
+          <span>👨‍🏫 Faculty Name</span>
+          <h3>{props.facultyName}</h3>
+        </div>
+
+        <div className="detail-box">
+          <span>🆔 Student ID</span>
+          <h3>{props.studentId}</h3>
+        </div>
+
+        <div className="detail-box">
+          <span>📅 Academic Year</span>
+          <h3>{props.academicYear}</h3>
+        </div>
+      </div>
+
+      <button className="btn">View Profile</button>
+
+    </div>
+  );
+}
+
+// Main App Component
+function App() {
+  return (
+    <div className="container">
+
+      <nav className="navbar">
+        <h2>🎓 STUDENT PORTAL</h2>
+        <span>Home | Dashboard | Profile</span>
+      </nav>
+
+      <section className="welcome">
+        <h1>Welcome to Student Portal</h1>
+        <p>Manage your academic information in one place.</p>
+      </section>
+
+      <Student
+        studentName="Puneeth"
+        studentCourse="B.Tech - Mechanical Engineering"
+        facultyName="Mr. Ramesh"
+        studentId="KL2026ME001"
+        academicYear="2026 - 2027"
+      />
+
+      <footer>
+        <p>© 2026 Student Portal | All Rights Reserved</p>
+      </footer>
+
+    </div>
+  );
+}
+
+export default App;
